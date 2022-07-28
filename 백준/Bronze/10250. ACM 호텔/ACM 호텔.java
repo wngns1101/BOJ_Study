@@ -7,14 +7,11 @@ public class Main {
 		int result = 0;
 		for (int i = 0; i < Integer.parseInt(index); i++) {
 			String str[] = br.readLine().split(" ");
-
-			int H = Integer.parseInt(str[0]);
-			int N = Integer.parseInt(str[2]);
-
-			if (N % H == 0) {
-				result = (H * 100) + (N / H);
+			if ((Integer.parseInt(str[2]) % Integer.parseInt(str[0])) == 0) {
+				result = Integer.parseInt(str[0]) * 100 + Integer.parseInt(str[2]) / Integer.parseInt(str[0]);
 			} else {
-				result = (((N % H) * 100) + (N / H) + 1);
+				result = (Integer.parseInt(str[2]) % Integer.parseInt(str[0])) * 100
+						+ (Integer.parseInt(str[2]) / Integer.parseInt(str[0])) + 1;
 			}
 			System.out.println(result);
 		}
