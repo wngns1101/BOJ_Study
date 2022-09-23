@@ -1,17 +1,14 @@
 n = int(input())
 
-for i in range(n):
+for _ in range(n):
     count = int(input())
-    emp = list()
+    data = [list(map(int, input().split())) for _ in range(count)]
+    data.sort()
     max = 1
-    for i in range(count):
-        x = list(map(int, input().split()))
-        emp.append(x)
-    emp.sort()
-    m = emp[0]
-    for i in range(1, len(emp)):
-        k = emp[i]
+    m = data[0]
+    for i in range(1, len(data)):
+        k = data[i]
         if m[0] > k[0] or m[1] > k[1]:
             max += 1
-            m = emp[i]
+            m = data[i]
     print(max)
