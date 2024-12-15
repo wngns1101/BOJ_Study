@@ -9,12 +9,10 @@ class Solution {
             setNums.add(num);
         }
         
-        if (setNums.size() == nums.length / 2) {
+        if (setNums.size() >= nums.length / 2) {
             answer = nums.length / 2;
-        } else if (setNums.size() < nums.length / 2){
-            answer = setNums.size();
         } else {
-            answer = nums.length / 2;
+            answer = setNums.size();
         }
         
         return answer;
